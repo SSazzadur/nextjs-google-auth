@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Google Authentication with Auth.js, Prisma, and MongoDB
+
+This repository demonstrates how to implement Google authentication in a Next.js 14 application using NextAuth.js 5 (beta), Prisma ORM, and MongoDB.
+
+## Overview
+
+This project sets up a robust authentication system leveraging Google's OAuth 2.0 for user authentication, Prisma for database management, and MongoDB as the database. It includes:
+
+-   Google OAuth 2.0 authentication using NextAuth.js
+-   Prisma ORM for database interactions
+-   MongoDB as the database
+
+## Features
+
+-   User authentication with Google
+-   Persistent user sessions
+-   Protected routes
+-   User data stored in MongoDB
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+-   Node.js
+-   npm
+-   MongoDB
+
+### Setup
+
+1. **Clone the Repository**
+
+```bash
+git clone https://github.com/SSazzadur/nextjs-google-auth
+cd next-google-auth
+```
+
+2. **Install Dependencies**
+
+```bash
+npm install
+```
+
+3. **Set Up Environment Variables**
+
+Create a `.env` file in the root directory and add the necessary environment variables as shown in the `.env.example` file:
+
+```env
+AUTH_GOOGLE_ID=<your-google-client-id>
+AUTH_GOOGLE_SECRET=<your-google-client-secret>
+AUTH_SECRET=<your-auth-secret>
+DATABASE_URL="mongodb+srv://<username>:<password>@<cluster-url>/<database-name>?retryWrites=true&w=majority&appName=<app-name>"
+```
+
+4. **Run the Development Server**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
